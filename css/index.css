@@ -33,11 +33,11 @@ header {
   padding-bottom: 25px;
   padding-left: 60px;
   position: fixed;
-
   top: 0;
   left: 0;
   font-size: 30px;
   font-family: "Bebas Neue";
+  z-index: 1000;
 }
 
 nav > ul {
@@ -48,6 +48,20 @@ nav > ul {
 nav > ul > li {
   margin: 0 30px;
   color: #000;
+  display: flex;
+  list-style: none;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translatey(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translatey(0);
+  }
 }
 
 nav > ul > li > a {
@@ -60,7 +74,6 @@ nav > ul > li > a {
   justify-content: space-between;
   align-items: center;
   padding-top: 50px;
-  overflow: hidden;
 }
 
 .image-container {
@@ -70,9 +83,10 @@ nav > ul > li > a {
 }
 
 #my-photo {
-  width: 457px;
-  height: 449px;
-  border-radius: 100%;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  object-fit: cover;
   opacity: 1;
   padding-left: 20px;
   margin-bottom: 40px;
@@ -95,15 +109,18 @@ nav > ul > li > a {
   font-family: Caveat;
 }
 
-.my-text {
+#my-name {
   padding-right: 20px;
   font-family: "Bebas Neue";
   color: #363636;
   font-weight: 400;
   margin-top: 0;
   margin-bottom: 0;
+  letter-spacing: 0.3rem;
 }
-
+.about-myself {
+  display: none;
+}
 h1 {
   text-align: right;
   font-size: 90px;
@@ -115,10 +132,14 @@ h2 {
   font-weight: 400;
 }
 
+.about-me {
+  display: none;
+}
+
 #summery {
   padding-right: 20px;
   font-family: "Abhaya Libre Medium";
-  text-align: right;
+  text-align: center;
   font-size: 24px;
   margin-top: 50px;
 }
@@ -133,11 +154,12 @@ h2 {
   display: flex;
   align-items: center;
   gap: 50px;
-  margin-top: 20px;
+  margin-top: 10;
+  margin-bottom: 40px;
 }
 
 .download {
-  width: 250px;
+  width: 149px;
   height: 47px;
   border-radius: 30px;
   background: white;
@@ -145,7 +167,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 200px;
+  margin-right: 300px;
   margin-bottom: 30px;
 }
 
@@ -167,12 +189,119 @@ h2 {
   gap: 25px;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
+  nav > ul > li {
+    margin: 0 25px;
+    font-size: 1.7rem;
+    color: #000;
+    display: flex;
+    list-style: none;
+    animation: fadeIn 0.5s ease;
+  }
   .hero-section {
     flex-direction: column;
     align-items: center;
   }
+  header {
+    width: 100%;
+    height: 75px;
+    color: #858585;
+    font-size: 1.7rem;
+    padding-left: 15px;
+  }
+  #my-photo {
+    width: 350px;
+    height: 350px;
+    margin-right: 400px;
+    margin-top: 80px;
+    border-radius: 100%;
+  }
+
+  #hello-word {
+    position: absolute;
+    top: 70px;
+    left: 500px;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #000;
+    display: inline-block;
+    white-space: nowrap; /* Keeps it on one line */
+  }
+
+  #my-name {
+    position: absolute;
+    top: 200px;
+    left: 450px;
+    font-size: 4rem;
+    font-weight: 400;
+    color: #000;
+    display: inline-block;
+    white-space: nowrap;
+    letter-spacing: 0.2rem;
+  }
+
+  .about-myself {
+    position: absolute;
+    top: 300px;
+    left: 550px;
+    display: block;
+    font-size: 1.2rem;
+    text-align: left;
+    margin-top: 20px;
+    row-gap: 20px;
+  }
+  .about-myself p {
+    margin-bottom: 20px;
+  }
+
+  .about-me {
+    display: block;
+    font-size: 3.5rem;
+    font-family: "Bebas Neue";
+    font-weight: 500;
+    text-align: left;
+    padding-left: 50px;
+  }
+
+  #summery {
+    padding-left: 20px;
+    text-align: justify;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    padding-left: 100px;
+    row-gap: 20px;
+  }
+
+  #summery p {
+    margin-bottom: 20px;
+  }
+
+  .download {
+    width: 150px;
+    height: 35px;
+    margin-top: 30px;
+    margin-left: 20px;
+    justify-content: center;
+  }
+
+  .download-text {
+    font-size: 0.8rem;
+  }
+
+  .social-icons {
+    gap: 25px;
+  }
+
+  .social-icons img {
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+  }
 }
+
+@media (max-width: 768px) {
+}
+
 /* ----------Qu---------- */
 
 /* .qualification {
