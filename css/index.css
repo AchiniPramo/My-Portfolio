@@ -15,6 +15,50 @@ body {
   /* font-family: Arial, sans-serif; */
 }
 
+#burger {
+  display: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.menu-panel {
+  background-color: #333;
+  color: white;
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  transition: right 0.4s ease;
+}
+
+.menu-panel ul {
+  list-style: none;
+  padding: 50px 20px;
+}
+
+.menu-panel ul li {
+  margin-bottom: 20px;
+}
+
+.menu-panel ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.close-btn {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
 .navigation-bar {
   display: flex;
   justify-content: center;
@@ -35,7 +79,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  font-size: 30px;
+  font-size: 2rem;
   font-family: "Bebas Neue";
   z-index: 1000;
 }
@@ -128,6 +172,7 @@ h1 {
 h2 {
   text-align: left;
   color: #000;
+  font-family: "Bebas Neue";
   font-size: 40px;
   font-weight: 400;
 }
@@ -268,11 +313,7 @@ h2 {
     font-size: 1.2rem;
     margin-top: 20px;
     padding-left: 100px;
-    row-gap: 20px;
-  }
-
-  #summery p {
-    margin-bottom: 20px;
+    line-height: 2;
   }
 
   .download {
@@ -299,6 +340,54 @@ h2 {
 }
 
 @media (max-width: 480px) {
+  #burger {
+    display: block;
+    cursor: pointer;
+    font-size: 30px;
+    color: black;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  nav ul {
+    display: none;
+  }
+  .menu-panel {
+    display: none;
+    background-color: #b9b9b9;
+    height: 75vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding-top: 60px;
+  }
+
+  .menu-panel.active {
+    display: block;
+  }
+
+  .menu-panel ul {
+    list-style-type: none;
+    padding: 20px;
+  }
+
+  .menu-panel ul li {
+    display: block;
+    margin: 20px 0;
+    font-size: 24px;
+  }
+
+  .close-btn {
+    font-size: 50px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
   #my-photo {
     width: 350px;
     height: 350px;
@@ -306,7 +395,7 @@ h2 {
     display: block;
     margin: auto;
     margin-top: 60px;
-    margin-left: 350px;
+    margin-left: 450px;
   }
 
   #hello-word {
@@ -336,10 +425,12 @@ h2 {
     display: none;
   }
   #summery {
-    text-align: justify;
+    text-align: center;
     font-size: 1rem;
     margin-top: 350px;
-    margin-right: 20px;
+    margin-left: -100px;
+    line-height: 2;
+    padding-left: 20px;
   }
 
   .download {
@@ -365,31 +456,46 @@ h2 {
 
 /* ----------Qu---------- */
 
-/* .qualification {
+.qualification {
   font-family: Arial, sans-serif;
   color: #000;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  flex-direction: column;
+  align-items: flex-start; /* Align qualification title to the left */
+  min-height: 100vh; /* Full viewport height */
+  padding: 50px;
+  margin-bottom: 0; /* Remove margin to ensure no extra space below */
 }
 
 .qualifi {
-  font-size: 2rem;
-  margin-bottom: 100px;
-  padding-right: 500px;
-}
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  max-width: 1200px;
+  font-size: 3rem; /* Size of qualification title */
+  text-align: left; /* Left align the title */
+  margin-bottom: 30px; /* Reduced space below the qualification title */
 }
 
-h2 {
-  font-size: 24px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+.container {
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between;
+  gap: 70px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.education {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+}
+
+.employeement {
+  margin-bottom: 10px;
+}
+
+.qualifi-name {
+  font-size: 2rem;
+  text-align: center;
   margin-bottom: 20px;
 }
 
@@ -425,24 +531,129 @@ h2 {
   background-color: grey;
 }
 
-h3,
-h4 {
-  font-size: 18px;
+.timeline-item h3 {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+
+.timeline-item h4 {
+  font-size: 1.4rem;
   margin-bottom: 5px;
 }
 
-p {
-  font-size: 16px;
+.timeline-item p {
+  font-size: 1.2rem;
   color: #333;
 }
 
 @media (max-width: 768px) {
   .container {
-    grid-template-columns: 1fr;
+    flex-direction: column; /* Stack sections vertically */
+    align-items: flex-start; /* Align items to the left */
+    text-align: left; /* Left align text */
+    gap: 0; /* No gap between sections */
+  }
+
+  .education {
+    padding-right: 400px;
+    width: 100%; /* Full width for education section */
+    margin-top: 40px; /* Space above education to create a gap from employment */
+  }
+
+  .employment {
+    padding-right: 400px;
+    font-size: 1rem;
+    width: 100%; /* Full width for employment section */
+    margin-bottom: 0; /* No space below employment */
   }
 }
 
-.contact-section {
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: left; /* Left align text within each section */
+    gap: 0; /* No gap between sections */
+  }
+
+  .education,
+  .employment {
+    padding-left: 400px;
+    display: flex; /* Use flexbox to center content */
+    flex-direction: column; /* Stack details vertically within each section */
+    align-items: center; /* Center items horizontally within each section */
+    width: 100%; /* Full width for both sections */
+    margin-top: 20px; /* Space above each section */
+    padding: 0; /* Remove padding for better alignment */
+  }
+
+  .education {
+    padding-right: 100px;
+    padding-left: 100px;
+    width: 100%; /* Full width for education section */
+    margin-top: 40px; /* Space above education to create a gap from employment */
+    letter-spacing: 2;
+  }
+
+  .employment {
+    padding-right: 100px;
+    padding-left: 100px;
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .details {
+    display: block;
+    margin: 5px 0;
+    text-align: center;
+  }
+}
+/* ---------------Skills--------------------- */
+
+.skill-container {
+  width: 80%;
+  max-width: 1000px;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.skill span {
+  font-size: 16px;
+}
+
+.progress-bar {
+  background-color: #ddd;
+  width: 70%;
+  height: 8px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0 10px;
+}
+
+.progress {
+  background-color: #333;
+  height: 100%;
+}
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .progress-bar {
+    width: 60%;
+  }
+}
+/* .contact-section {
   display: flex;
   justify-content: space-around;
   padding: 40px;
@@ -515,7 +726,6 @@ p {
   font-weight: 600;
   color: #000000;
 }
-
 
 @media (max-width: 768px) {
   .contact-section {

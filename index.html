@@ -17,6 +17,14 @@
       href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&display=swap"
       rel="stylesheet"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <header>
@@ -31,8 +39,36 @@
           <li><a href="#projects">PROJECTS</a></li>
           <li><a href="#contact">CONTACT ME</a></li>
         </ul>
+        <i class="fa fa-bars burger" id="burger" aria-hidden="true"></i>
       </nav>
     </header>
+
+    <div class="menu-panel" id="menu-panel-id">
+      <button class="close-btn" id="btn-close">&times;</button>
+      <ul>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#qualifications">QUALIFICATIONS</a></li>
+        <li><a href="#skills">SKILLS</a></li>
+        <li><a href="#projects">PROJECTS</a></li>
+        <li><a href="#contact">CONTACT ME</a></li>
+      </ul>
+    </div>
+
+    <script>
+      const burger = document.getElementById("burger");
+      const menuPanel = document.getElementById("menu-panel-id");
+      const closeBtn = document.getElementById("btn-close");
+
+      // Open the menu when the burger icon is clicked
+      burger.addEventListener("click", () => {
+        menuPanel.classList.add("active");
+      });
+
+      // Close the menu when the close button is clicked
+      closeBtn.addEventListener("click", () => {
+        menuPanel.classList.remove("active");
+      });
+    </script>
 
     <main>
       <!-- Hero Section -->
@@ -127,12 +163,12 @@
         </div>
       </section>
 
-      <!-- <-- Qualification Section -->
-      <!-- <section class="qualification">
+      <!-- -- Qualification Section -- -->
+      <section class="qualification">
+        <h2 class="qualifi">QUALIFICATIONS_</h2>
         <div class="container">
           <div class="education">
-            <h2 class="qualifi">QUALIFICATIONS_</h2>
-            <h2>EDUCATION</h2>
+            <h2 class="qualifi-name">EDUCATION</h2>
             <div class="timeline">
               <div class="timeline-item">
                 <h3>Bsc(Hons). in Computer Science</h3>
@@ -147,7 +183,7 @@
             </div>
           </div>
           <div class="employment">
-            <h2>EMPLOYMENT</h2>
+            <h2 class="qualifi-name">EMPLOYMENT</h2>
             <div class="timeline">
               <div class="timeline-item">
                 <h3>Willing to work as a Full Stack Developer</h3>
@@ -158,7 +194,78 @@
         </div>
       </section>
 
-      <section class="contact-section">
+      <div class="skill-container">
+        <h2>SKILLS_</h2>
+        <div class="skills-grid">
+          <!-- Frontend Skills -->
+          <div class="frontend">
+            <h3>FRONTEND</h3>
+            <div class="skill">
+              <span>HTML</span>
+              <div class="progress-bar">
+                <div class="progress" style="width: 90%"></div>
+              </div>
+              <span>90%</span>
+            </div>
+            <div class="skill">
+              <span>CSS</span>
+              <div class="progress-bar">
+                <div class="progress" style="width: 80%"></div>
+              </div>
+              <span>80%</span>
+            </div>
+            <div class="skill">
+              <span>JavaScript</span>
+              <div class="progress-bar">
+                <div class="progress" style="width: 60%"></div>
+              </div>
+              <span>60%</span>
+            </div>
+            <div class="skill">
+              <span>React</span>
+              <div class="progress-bar">
+                <div class="progress" style="width: 80%"></div>
+              </div>
+              <span>80%</span>
+            </div>
+          </div>
+
+          <!-- Backend Skills -->
+          <div class="backend">
+            <h3>BACKEND</h3>
+            <div class="skill">
+              <span>Java</span>
+              <div class="progress-bar">
+                <div class="progress" style="width: 90%"></div>
+              </div>
+              <span>90%</span>
+            </div>
+            <div class="skill">
+              <span>MySQL</span>
+              <div class="progress-bar">
+                <div class="progress" style="width: 80%"></div>
+              </div>
+              <span>80%</span>
+            </div>
+            <div class="skill">
+              <span>JavaScript</span>
+              <div class="progress-bar">
+                <div class="progress" style="width: 60%"></div>
+              </div>
+              <span>60%</span>
+            </div>
+            <div class="skill">
+              <span>React</span>
+              <div class="progress-bar">
+                <div class="progress" style="width: 80%"></div>
+              </div>
+              <span>80%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <section class="contact-section">
         <div class="contact-info">
           <h2>GET IN TOUCH_</h2>
           <p><strong>Phone:</strong> +9471 927 9321</p>
