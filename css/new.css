@@ -1,0 +1,797 @@
+body {
+  background: linear-gradient(
+    180deg,
+    #fff 0%,
+    #b9b9b9 33%,
+    #858585 61%,
+    #363636 100%
+  );
+  /* font-family: Arial, sans-serif; */
+}
+
+#burger {
+  display: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.menu-panel {
+  background-color: #333;
+  color: white;
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  transition: right 0.4s ease;
+}
+
+.menu-panel ul {
+  list-style: none;
+  padding: 50px 20px;
+}
+
+.menu-panel ul li {
+  margin-bottom: 20px;
+}
+
+.menu-panel ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.close-btn {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.navigation-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-left: 20px;
+}
+
+header {
+  width: 100%;
+  height: 70px;
+  background: #fff;
+  box-shadow: 0 -8px 26px #b336ff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 2rem;
+  font-family: "Bebas Neue";
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav > ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+}
+
+nav > ul > li {
+  margin: 0 30px;
+  color: #000;
+}
+
+nav > ul > li > a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translatey(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translatey(0);
+  }
+}
+
+.hero-container {
+  flex: 2.175;
+  padding-left: 40px;
+  overflow: hidden;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 20px 0;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#my-photo {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 1;
+}
+
+#hello-word {
+  text-align: right;
+  font-size: 4.625rem;
+  font-weight: 400;
+  margin-top: 50px;
+  font-family: Caveat;
+}
+
+#my-name {
+  font-family: "Bebas Neue";
+  color: #363636;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: 0.3rem;
+  font-size: 5.625rem;
+}
+
+.about-myself {
+  display: none;
+}
+
+h1 {
+  text-align: right;
+  font-size: 5.625rem;
+}
+
+h2 {
+  text-align: left;
+  color: #000;
+  font-family: "Bebas Neue";
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.about-me {
+  display: none;
+}
+
+#summery {
+  font-family: "Abhaya Libre Medium";
+  text-align: center;
+  font-size: 1.5rem;
+  max-width: 900px;
+  margin-bottom: 50px;
+}
+
+.text-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#thanks-word {
+  display: block;
+  margin-top: 10px;
+}
+
+.social-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.download {
+  width: 200px;
+  height: 47px;
+  border-radius: 30px;
+  background: white;
+  box-shadow: 0px 0px 7px 0px #b336ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 100px 0 50px;
+}
+
+.download-text {
+  display: inline-flex;
+  align-items: center;
+  color: #000;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.download:hover {
+  box-shadow: 0 0 20px #b336ff;
+}
+
+.social-icons {
+  color: #fff;
+  display: flex;
+  gap: 25px;
+}
+
+/* /* @media (max-width: 768px) {
+  nav > ul > li {
+    margin: 0 25px;
+    font-size: 1.7rem;
+    color: #000;
+    display: flex;
+    list-style: none;
+    animation: fadeIn 0.5s ease;
+  }
+  .hero-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  header {
+    width: 100%;
+    height: 75px;
+    color: #858585;
+    font-size: 1.7rem;
+    padding-left: 15px;
+  }
+  #my-photo {
+    width: 350px;
+    height: 350px;
+    margin-right: 400px;
+    margin-top: 80px;
+    border-radius: 100%;
+  }
+
+  #hello-word {
+    position: absolute;
+    top: 70px;
+    left: 500px;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #000;
+    display: inline-block;
+    white-space: nowrap;
+  } 
+
+  #my-name {
+    position: absolute;
+    top: 200px;
+    left: 450px;
+    font-size: 4rem;
+    font-weight: 400;
+    color: #000;
+    display: inline-block;
+    white-space: nowrap;
+    letter-spacing: 0.2rem;
+  }
+
+  .about-myself {
+    position: absolute;
+    top: 300px;
+    left: 550px;
+    display: block;
+    font-size: 1.2rem;
+    text-align: left;
+    margin-top: 20px;
+    row-gap: 20px;
+  }
+  .about-myself p {
+    margin-bottom: 20px;
+  }
+
+  .about-me {
+    display: block;
+    font-size: 3.5rem;
+    font-family: "Bebas Neue";
+    font-weight: 500;
+    text-align: left;
+    padding-left: 50px;
+  }
+
+  #summery {
+    padding-left: 20px;
+    text-align: justify;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    padding-left: 100px;
+    line-height: 2;
+  }
+
+  .download {
+    width: 150px;
+    height: 35px;
+    margin-top: 30px;
+    margin-left: 20px;
+    justify-content: center;
+  }
+
+  .download-text {
+    font-size: 0.8rem;
+  }
+
+  .social-icons {
+    gap: 25px;
+  }
+
+  .social-icons img {
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  #burger {
+    display: block;
+    cursor: pointer;
+    font-size: 30px;
+    color: black;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  nav ul {
+    display: none;
+  }
+  .menu-panel {
+    display: none;
+    background-color: #b9b9b9;
+    height: 75vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding-top: 60px;
+  }
+
+  .menu-panel.active {
+    display: block;
+  }
+
+  .menu-panel ul {
+    list-style-type: none;
+    padding: 20px;
+  }
+
+  .menu-panel ul li {
+    display: block;
+    margin: 20px 0;
+    font-size: 24px;
+  }
+
+  .close-btn {
+    font-size: 50px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  #my-photo {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    margin-top: 60px;
+    margin-left: 450px;
+  }
+
+  #hello-word {
+    font-size: 3.5rem;
+    color: #000;
+    margin-top: 370px;
+    left: 400px;
+  }
+
+  #my-name {
+    font-size: 4rem;
+    margin-top: 350px;
+    left: 400px;
+  }
+
+  .about-myself {
+    top: 300px;
+    left: 30px;
+    display: block;
+    font-size: 1rem;
+    text-align: left;
+    row-gap: 20px;
+    margin-top: 350px;
+  }
+
+  .about-me {
+    display: none;
+  }
+  #summery {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 350px;
+    margin-left: -100px;
+    line-height: 2;
+    padding-left: 100px;
+  }
+
+  .download {
+    width: 150px;
+    margin-left: 450px;
+    margin-top: 10px;
+    padding-left: 50px;
+  }
+  .download-text {
+    font-size: 0.7rem;
+    padding-right: 20px;
+  }
+
+  .social-icons {
+    gap: 25px;
+  }
+
+  .social-icons img {
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+  }
+} */
+
+/* ----------Qu---------- */
+
+.qualification {
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 50px;
+  margin-bottom: 0;
+}
+
+.qualifi {
+  font-size: 3rem;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 70px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.education {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+}
+
+.employeement {
+  margin-bottom: 10px;
+}
+
+.qualifi-name {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 40px;
+  margin-top: 20px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: black;
+}
+
+.timeline-item {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timeline-item:before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: grey;
+}
+
+.timeline-item h3 {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+
+.timeline-item h4 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.timeline-item p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0;
+  }
+
+  .education {
+    padding-right: 400px;
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .employment {
+    padding-right: 400px;
+    font-size: 1rem;
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    gap: 0;
+  }
+
+  .education,
+  .employment {
+    padding-left: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    padding: 0;
+  }
+
+  .education {
+    padding-right: 100px;
+    padding-left: 100px;
+    width: 100%;
+    margin-top: 40px;
+    letter-spacing: 2;
+  }
+
+  .employment {
+    padding-right: 100px;
+    padding-left: 100px;
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .details {
+    display: block;
+    margin: 5px 0;
+    text-align: center;
+  }
+}
+/* ---------------Skills--------------------- */
+.all-skills {
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 50px;
+  margin-bottom: 0;
+}
+
+.skill-word {
+  margin-bottom: 50px;
+}
+.skill-container {
+  padding-bottom: 500px;
+  width: 80%;
+  max-width: 1000px;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.skill span {
+  font-size: 16px;
+}
+
+.progress-bar {
+  background-color: #ddd;
+  width: 100%;
+  height: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 10px;
+}
+
+.progress {
+  background-color: #333;
+  height: 100%;
+}
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .progress-bar {
+    width: 60%;
+  }
+}
+
+/* ------------------Project------------------------- */
+.project .container {
+  width: 80%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.project-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.project-image img {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.project-description {
+  text-align: left;
+  max-width: 400px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ------------------Contact------------------------- */
+form {
+  width: 450px;
+  height: 300px;
+  box-shadow: 0 0 10px;
+  margin: auto;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.or-just {
+  margin-top: 100px;
+}
+.contact-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px;
+}
+
+.contact-info {
+  flex: 1;
+  max-width: 400px;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.contact-form {
+  flex: 1;
+  max-width: 400px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #ccc;
+}
+
+.contact-form button {
+  padding: 10px;
+  background-color: #555;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.contact-form button:hover {
+  background-color: #666;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  background: #fff;
+  box-shadow: 0 -2px 2px #b336ff;
+  font-size: 0.9rem;
+  position: relative;
+  bottom: 0;
+}
+
+#thanks {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .contact-info,
+  .contact-form {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+}

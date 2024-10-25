@@ -4,49 +4,80 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Achini Pramodhya's Portfolio</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="/css/new.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-    <!-- Hero section start -->
-    <header class="header">
-      <div class="hero">
-        <nav class="navigation-bar">
-          <span class="welcome"> WELCOME </span>
+    <header>
+      <div class="navigation-bar">
+        <span class="welcome"> WELCOME! </span>
+        <nav>
           <ul class="navigation-links">
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#qualifications">QUALIFICATIONS</a></li>
+            <li><a href="#hero">HOME</a></li>
+            <li><a href="#qualification">QUALIFICATIONS</a></li>
             <li><a href="#skills">SKILLS</a></li>
             <li><a href="#projects">PROJECTS</a></li>
             <li><a href="#contact">CONTACT ME</a></li>
           </ul>
+          <i class="fa fa-bars burger" id="burger" aria-hidden="true"></i>
         </nav>
       </div>
     </header>
 
-    <main>
-      <section class="home-section" id="home">
-        <div class="image-container">
-          <img
-            id="my-photo"
-            src="/assets/image/Achini.jpeg"
-            width="250px"
-            height="200px"
-            alt="Achini's profile photo"
-          />
+    <div class="menu-panel" id="menu-panel-id">
+      <button class="close-btn" id="btn-close">&times;</button>
+      <ul>
+        <li><a href="#hero">HOME</a></li>
+        <li><a href="#qualifications">QUALIFICATIONS</a></li>
+        <li><a href="#skills">SKILLS</a></li>
+        <li><a href="#projects">PROJECTS</a></li>
+        <li><a href="#contact">CONTACT ME</a></li>
+      </ul>
+    </div>
+
+    <section class="hero-section" id="hero">
+      <div class="image-container">
+        <img
+          id="my-photo"
+          src="/assets/image/Achini.jpeg"
+          width="250px"
+          height="200px"
+          alt="Achini's profile photo"
+        />
+      </div>
+
+      <div class="hero-container">
+        <div id="hello-word">Hello My Name Is</div>
+
+        <h1 class="my-text" id="my-name">ACHINI PRAMODHYA</h1>
+        <div class="about-myself">
+          <p>Age : 22 Years (Since 2002)</p>
+          <p>Contact : +94 71 640 9327</p>
+          <p>Education : Undergraduate</p>
+          <p>Address : Galle,Sri Lanka</p>
         </div>
 
-        <div class="home-container">
-          <h4 id="hello-word">"Hello!"</h4>
-          <h1 class="my-text">ACHINI PRAMODHYA</h1>
-
+        <h1 class="about-me">ABOUT_</h1>
+        <div class="text-container">
           <p class="my-text" id="summery">
             Hello! I'm Achini Pramodhya, a passionate and driven Full-Stack
             Developer Intern with a keen interest in creating dynamic and
@@ -59,215 +90,234 @@
             code and enjoy solving complex problems. Feel free to explore my
             projects, and if you'd like to connect or collaborate, don't
             hesitate to reach out.
-            <span id="thanks">Thank you for visiting!</span>
+            <span id="thanks-word">Thank you for visiting!</span>
           </p>
+        </div>
 
-          <div class="social-container">
-            <div class="download">
-              <a href="/assets/cv/CV Achini.pdf" target="_blank">
-                <span class="download-text">DOWNLOAD CV</span></a
-              >
+        <div class="social-container">
+          <div class="download">
+            <a
+              href="/assets/cv/CV Achini.pdf"
+              target="_blank"
+              class="download-text"
+              >DOWNLOAD CV</a
+            >
+          </div>
+
+          <div class="social-icons">
+            <a
+              class="social-hover"
+              href="https://web.facebook.com/"
+              target="_blank"
+              ><img src="/assets/image/social/Facebook.png" alt="facebook"
+            /></a>
+
+            <a
+              class="social-hover"
+              href="https://web.instagram.com/"
+              target="_blank"
+              ><img src="/assets/image/social/Instergram.png" alt="instagram"
+            /></a>
+
+            <a
+              class="social-hover"
+              href="https://www.linkedin.com"
+              target="_blank"
+            >
+              <img src="/assets/image/social/LinkedIn.png" alt="linkedin"
+            /></a>
+
+            <a class="social-hover" href="https://github.com" target="_blank"
+              ><img src="/assets/image/social/Github.png" alt="github"
+            /></a>
+
+            <a
+              class="social-hover"
+              href="mailto:achinipramodhya4@gmail.com"
+              target="_blank"
+              ><img src="/assets/image/social/Email.png" alt="gmail"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -- Qualification Section -- -->
+    <section id="qualification">
+      <h2 class="headiing">QUALIFICATIONS_</h2>
+      <div class="container">
+        <div class="education">
+          <h2 class="sub-heading">EDUCATION</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h3>Bsc(Hons). in Computer Science</h3>
+              <h4>IJSE - Institute Of Software Engineering</h4>
+              <p>2023 - Present Currently Learning</p>
             </div>
-
-            <div class="social-icons">
-              <a
-                class="social-hover"
-                href="https://web.facebook.com/"
-                target="_blank"
-                ><img src="/assets/image/social/facebook.jpeg" alt="facebook"
-              /></a>
-
-              <a
-                class="social-hover"
-                href="https://web.instagram.com/"
-                target="_blank"
-                ><img
-                  src="/assets/image/social/instergram.jpeg"
-                  alt="instagram"
-              /></a>
-
-              <a
-                class="social-hover"
-                href="https://www.linkedin.com"
-                target="_blank"
-              >
-                <img src="/assets/image/social/linkedin.jpeg" alt="linkedin"
-              /></a>
-
-              <a class="social-hover" href="https://github.com" target="_blank"
-                ><img src="/assets/image/social/github.jpeg" alt="github"
-              /></a>
-
-              <a
-                class="social-hover"
-                href="mailto:achinipramodhya4@gmail.com"
-                target="_blank"
-                ><img src="/assets/image/social/gmail.jpeg" alt="gmail"
-              /></a>
+            <div class="timeline-item">
+              <h3>Vocational Education</h3>
+              <h4>K.Tech (Niyagama)</h4>
+              <p>2022<br />ICT NVQ Level IV</p>
             </div>
           </div>
         </div>
-      </section>
-
-      <section id="qualifications">
-        <h2>QUALIFICATIONS</h2>
-        <table>
-          <tr>
-            <th>EDUCATION</th>
-            <th>EMPLOYMENT</th>
-          </tr>
-          <tr>
-            <td>
-              <p>BSc(Hons) in Computer Science</p>
-              <p><u>IJSE - Institute Of Software Engineering</u></p>
-              <p>2023 - Present</p>
-              <p>Currently Learning</p>
-              <br />
-              <p>Vocational Education</p>
-              <p>K.Tech (Niyagama)</p>
-              <p>2022</p>
-              <p>ICT NVQ Level IV</p>
-            </td>
-            <td>
-              <p>Willing to work as a Full Stack Developer</p>
+        <div class="employment">
+          <h2 class="sub-heading">EMPLOYMENT</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h3>Willing to work as a Full Stack Developer</h3>
               <p>2024</p>
-            </td>
-          </tr>
-        </table>
-      </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section id="skills">
-        <h2>SKILLS</h2>
-        <table>
-          <tr>
-            <th>FRONTEND</th>
-            <th>BACKEND</th>
-          </tr>
+    <section class="all-skills" id="skills">
+      <div class="skill-container">
+        <h2 class="skill-word">SKILLS_</h2>
+        <div class="skills-grid">
+          <!-- Frontend Skills -->
+          <div class="frontend">
+            <h3 class="sub-heading">FRONTEND</h3>
+            <div class="skill">
+              <div class="skill-info">
+                <span class="language">HTML</span>
+                <span class="presentage">90%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-info">
+                <span class="language">CSS</span>
+                <span class="presentage">80%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-info">
+                <span class="language">JavaScript</span>
+                <span class="presentage">60%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 60%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-info">
+                <span class="language">React</span>
+                <span class="presentage">80%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
 
-          <tr>
-            <td>
-              <p>HTML: 90%</p>
-              <p>CSS: 80%</p>
-              <p>JavaScript: 60%</p>
-              <p>React: 80%</p>
-            </td>
-            <td>
-              <p>Java: 90%</p>
-              <p>MySQL: 80%</p>
-              <p>JavaScript: 60%</p>
-              <p>React: 80%</p>
-            </td>
-          </tr>
-        </table>
-      </section>
+          <!-- Backend Skills -->
+          <div class="backend">
+            <h3 class="sub-heading">BACKEND</h3>
+            <div class="skill">
+              <div class="skill-info">
+                <span class="language">Java</span>
+                <span class="presentage">90%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-info">
+                <span class="language">MySQL</span>
+                <span class="presentage">80%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section id="projects">
-        <h2>PROJECTS</h2>
-        <h3>MICRO FINANCE PROJECT</h3>
-        <article>
-          <div>
+    <section class="project" id="projects">
+      <div class="container">
+        <h2>PROJECTS_</h2>
+        <!-- Navigation Arrows -->
+        <div class="project-content">
+          <!-- Project Image -->
+          <div class="project-image">
             <img
               src="/assets/image/micro_finance_login_page.PNG"
-              width="450px"
-              height="250px"
-              alt="Micro Finance Project Login Page"
+              alt="Project Image"
             />
-            <p>
-              A comprehensive Micro Finance Management System developed using
-              Java, focusing on handling loans, collateral, customer management,
-              and related financial operations. The project is structured with a
-              layered architecture and features a user-friendly interface built
-              with JavaFX, ensuring efficient management of microfinance
-              activities.
-            </p>
-            <h3>USED STACKS</h3>
-            <p>Java and MySQL</p>
-
-            <a href="https://github.com/AchiniPramodhya">VIEW IN GITHUB</a>
           </div>
-        </article>
-      </section>
 
-      <section id="contact">
-        <h2>GET IN TOUCH</h2>
-        <div>
-          <p>PHONE: +9471 927 9321</p>
-          <p>FACEBOOK: Achini Pramodhya</p>
-          <p>EMAIL: achinipramodhya4@gmail.com</p>
+          <!-- Project Description -->
+
+          <div class="project-description">
+            <h3>LOGIN PAGE</h3>
+            <p>
+              A visually appealing log-in page inspired from the most famous
+              social media platform. I tried to enhance the look of the
+              originally simple and minimalist web page.
+            </p>
+            <h4>USED STACKS</h4>
+            <p>HTML and CSS</p>
+            <h4>VIEW IN GITHUB</h4>
+            <a href="https://github.com/AchiniPramodhya" target="_blank"
+              >https://github.com/AchiniPramodhya</a
+            >
+          </div>
         </div>
-        <div>
-          <h3>OR JUST WRITE ME A MAIL HERE</h3>
-          <form>
-            <fieldset>
-              <div>
-                <label for="name">YOUR NAME:</label>
-                <input type="text" id="name" name="name" required />
-                <br /><br />
-                <label for="email">YOUR EMAIL:</label>
-                <input type="email" id="email" name="email" required />
-                <br /><br />
-                <div style="display: flex; align-items: center">
-                  <label for="message">TYPE THE MESSAGE HERE:</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="6"
-                    cols="70"
-                    required
-                  ></textarea>
-                </div>
-              </div>
-              <button type="submit">SEND</button>
-            </fieldset>
-          </form>
-        </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <footer>
-      <p class="copyright">© 2024 ACHINI PRAMODHYA. All rights reserved</p>
-      <p class="thanks">Thank you!</p>
-    </footer>
-  </body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Page</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <section class="contact-section">
+    <section class="contact-section" id="contact">
       <div class="contact-info">
-        <h1>GET IN TOUCH_</h1>
+        <h2 class="get">GET IN TOUCH_</h2>
         <p><strong>PHONE:</strong> +9471 927 9321</p>
         <p><strong>FACEBOOK:</strong> Achini Pramodhya</p>
-        <p><strong>MAIL:</strong> achinipramodhya4@gmail.com</p>
+        <p><strong>EMAIL:</strong> achinipramodhya4@gmail.com</p>
       </div>
 
       <div class="contact-form">
-        <h2>OR JUST WRITE ME A MAIL HERE_</h2>
-        <form>
-          <div class="form-group">
-            <input type="text" placeholder="YOUR NAME" />
-          </div>
-          <div class="form-group">
-            <input type="email" placeholder="YOUR EMAIL" />
-          </div>
-          <div class="form-group">
-            <textarea placeholder="TYPE THE MESSAGE HERE"></textarea>
-          </div>
-          <button type="submit">SEND</button>
+        <h2 class="sub-heading">OR JUST WRITE ME A MAIL HERE_</h2>
+        <form action="#" method="post">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            name="message"
+            placeholder="Type the message here"
+            rows="4"
+            required
+          ></textarea>
+          <button type="submit">Send</button>
         </form>
       </div>
     </section>
 
-    <footer>
-      <p>© 2024 ACHINI PRAMODHYA. ALL RIGHTS RESERVED</p>
-      <p>THANK YOU!</p>
+    <footer class="footer">
+      <p id="copyright">&copy; 2024 Achini Pramodhya. All rights reserved</p>
+      <p>Thank you!</p>
     </footer>
+
+    <script>
+      const burger = document.getElementById("burger");
+      const menuPanel = document.getElementById("menu-panel-id");
+      const closeBtn = document.getElementById("btn-close");
+
+      burger.addEventListener("click", () => {
+        menuPanel.classList.add("active");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        menuPanel.classList.remove("active");
+      });
+    </script>
   </body>
 </html>
