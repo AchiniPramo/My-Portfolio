@@ -9,6 +9,57 @@ body {
   /* font-family: Arial, sans-serif; */
 }
 
+.project .container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.project-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.project-image img {
+  margin-top: 100px;
+  margin-right: 100px; /* Adjust this value as needed */
+  width: 450px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding subtle shadow */
+}
+
+.project-description {
+  text-align: left;
+  max-width: 500px;
+}
+
+.project-description h3,
+h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.project-description p {
+  margin-bottom: 15px;
+}
+
+.project-description a {
+  color: #0066cc; /* Adjust color if needed */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-description a:hover {
+  text-decoration: underline;
+}
+
 #burger {
   display: none;
   color: white;
