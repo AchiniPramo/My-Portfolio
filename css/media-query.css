@@ -1,12 +1,14 @@
+/*----------------- Hero Section ---------------------*/
+
 @media (max-width: 768px) {
-  nav > ul > li {
+  /* nav > ul > li {
     margin: 0 25px;
     font-size: 1.7rem;
     color: #000;
     display: flex;
     list-style: none;
     animation: fadeIn 0.5s ease;
-  }
+  } */
   .hero-section {
     flex-direction: column;
     align-items: center;
@@ -16,16 +18,17 @@
     font-size: 1.7rem;
     padding-left: 10px;
   }
+
   #my-photo {
     width: 350px;
     height: 350px;
     margin-right: 350px;
-    margin-top: 80px;
+    margin-top: 70px;
   }
 
   #hello-word {
     position: absolute;
-    top: 100px;
+    top: 80px;
     left: 500px;
     font-size: 3.5rem;
     font-weight: 400;
@@ -48,9 +51,9 @@
   .about-myself {
     position: absolute;
     top: 300px;
-    left: 550px;
+    left: 500px;
     display: block;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: left;
     margin-top: 20px;
     row-gap: 20px;
@@ -65,23 +68,22 @@
     font-family: "Bebas Neue";
     font-weight: 500;
     text-align: left;
-    padding-left: 50px;
+    padding-right: 100px;
   }
 
   #summery {
-    padding-left: 20px;
-    text-align: justify;
+    text-align: center;
     font-size: 1.2rem;
-    margin-top: 20px;
-    padding-left: 100px;
+    max-width: 1000px;
+    bottom: 250px;
     line-height: 2;
+    margin-left: 50px;
   }
 
   .download {
     width: 150px;
     height: 35px;
-    margin-top: 30px;
-    margin-left: 20px;
+    margin-left: 0px;
     justify-content: center;
   }
 
@@ -90,7 +92,7 @@
   }
 
   .social-icons {
-    gap: 25px;
+    gap: 30px;
   }
 
   .social-icons img {
@@ -161,14 +163,14 @@
   #hello-word {
     font-size: 3.5rem;
     color: #000;
-    margin-top: 370px;
+    margin-top: 400px;
     left: 400px;
   }
 
   #my-name {
     font-size: 4rem;
     margin-top: 350px;
-    left: 400px;
+    left: 350px;
   }
 
   .about-myself {
@@ -187,17 +189,18 @@
   #summery {
     text-align: center;
     font-size: 1rem;
-    margin-top: 350px;
-    margin-left: -100px;
+    margin-top: 370px;
     line-height: 2;
     padding-left: 100px;
+    max-width: 550px;
+    margin-right: 90px;
   }
 
   .download {
-    width: 150px;
-    margin-left: 450px;
+    width: 130px;
+    margin-left: 350px;
     margin-top: 10px;
-    padding-left: 50px;
+    padding-left: 30px;
   }
   .download-text {
     font-size: 0.7rem;
@@ -215,3 +218,62 @@
     margin-left: 10px;
   }
 }
+
+/*----------------- Qualification Section ---------------------*/
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .education,
+  .employment {
+    margin-left: 70px;
+    width: 70%;
+  }
+
+  .sub-heading {
+    padding-left: 0;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .education,
+  .employment {
+    margin-left: 100px;
+    width: 80%;
+  }
+
+  .sub-heading {
+    padding-left: 0;
+  }
+}
+
+/*----------------- Skills Section ---------------------*/
+@media (max-width: 768px) {
+  .skills-grid {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .frontend,
+  .backend {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .frontend,
+  .backend {
+    margin-left: 100px;
+    width: 80%;
+  }
+}
+
+/*----------------- Project Section ---------------------*/
