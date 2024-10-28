@@ -1,3 +1,118 @@
+@media (max-width: 1024px) {
+  .hero-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header {
+    font-size: 2rem;
+    padding-right: 50px;
+  }
+
+  nav > ul > li {
+    margin: 0 20px;
+    font-size: 2rem;
+    animation: fadeIn 0.5s ease;
+  }
+
+  #my-photo {
+    width: 400px;
+    height: 400px;
+    margin-right: 500px;
+    margin-top: 50px;
+  }
+
+  #hello-word {
+    position: absolute;
+    top: 50px;
+    left: 600px;
+    font-size: 4rem;
+    font-weight: 400;
+  }
+
+  #my-name {
+    position: absolute;
+    top: 180px;
+    left: 550px;
+    font-size: 4rem;
+    font-weight: 400;
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  #summery {
+    position: absolute;
+    font-size: 1.5rem;
+    max-width: 850px;
+    left: 475px;
+    top: 270px;
+  }
+  .download {
+    width: 200px;
+    height: 40px;
+    margin-left: 0px;
+    margin-top: 200px;
+  }
+
+  .download-text {
+    font-size: 0.8rem;
+  }
+  .social-icons {
+    gap: 30px;
+    margin-left: 200px;
+  }
+
+  .social-icons img {
+    font-size: 50px;
+    width: 50px;
+    height: 50px;
+    margin-top: 200px;
+  }
+
+  /* project */
+  .project-image img {
+    margin-bottom: 10px;
+    margin-left: 20px;
+  }
+  .project-description {
+    text-align: center;
+    max-width: 500px;
+    margin-top: 100px;
+    margin-left: 100px;
+  }
+  */
+
+/* contact */
+.contact-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 90%; /* Use a percentage for responsiveness */
+    margin: 0; /* Remove margins for a cleaner look */
+    margin-bottom: 0px; /* Add some spacing between sections */
+  }
+
+  .contact-info {
+    margin-top: 120px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 75%;
+  }
+
+  .contact-form button {
+    width: 50%;
+  }
+
+  #copyright {
+    font-size: 0.65rem; /* Adjust copyright font size */
+  }
+}
+
 /*----------------- Hero Section ---------------------*/
 @media screen and (min-width: 426px) and (max-width: 768px) {
   .hero-section {
@@ -167,53 +282,6 @@
     width: 100%;
     align-items: center;
     margin-top: 0px;
-  }
-
-  .contact-form {
-    margin-top: 20px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .hero-section {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  header {
-    font-size: 2rem;
-    padding-right: 50px;
-  }
-
-  nav > ul > li {
-    margin: 0 20px;
-    font-size: 2rem;
-    animation: fadeIn 0.5s ease;
-  }
-
-  /* project */
-  .project-image img {
-    margin-bottom: 10px;
-    margin-left: 20px;
-  }
-  * .project-description {
-    text-align: center;
-    max-width: 500px;
-    margin-top: 100px;
-    margin-left: 100px;
-  }
-
-  /* contact */
-  .get {
-    margin-bottom: 100px;
-  }
-
-  .contact-info {
-    margin-right: 100px;
-  }
-  .contact-info,
-  .contact-form {
-    width: 300px;
   }
 
   .contact-form {
