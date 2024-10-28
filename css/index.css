@@ -49,7 +49,7 @@ nav > ul {
 }
 
 nav > ul > li {
-  margin: 0 30px;
+  margin: 0 50px;
   color: #000;
 }
 
@@ -371,6 +371,7 @@ h2 {
 .contact-info {
   flex: 1;
   width: 50%;
+  margin-top: 130px;
 }
 
 .contact-info p {
@@ -388,6 +389,7 @@ h2 {
 .contact-form h2 {
   padding-left: 0;
 }
+
 .contact-form form {
   display: flex;
   flex-direction: column;
@@ -395,6 +397,8 @@ h2 {
   height: 350px;
   box-shadow: 0 0 10px;
   border-radius: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .contact-form input,
@@ -407,6 +411,7 @@ h2 {
   color: #fff;
   font-size: 1rem;
   margin: 10px;
+  width: 600px;
 }
 
 .contact-form input::placeholder,
@@ -423,10 +428,9 @@ h2 {
   cursor: pointer;
   font-size: 1rem;
   width: 30%;
-  margin-left: 200px;
+  /* margin-left: 200px; */
   margin-top: 20px;
 }
-
 .contact-form button:hover {
   background-color: #666;
 }
@@ -451,7 +455,6 @@ h2 {
   color: #fff;
   font-weight: 400;
 }
-
 /* -----------------------Burger button------------------------- */
 
 #burger {
@@ -496,74 +499,4 @@ h2 {
   position: absolute;
   top: 10px;
   right: 20px;
-}
-
-@media (max-width: 480px) {
-  #burger {
-    display: block;
-    cursor: pointer;
-    font-size: 1.875rem;
-    color: black;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
-
-  nav ul {
-    display: none;
-  }
-
-  .menu-panel {
-    display: none;
-    background-color: #b9b9b9;
-    height: 75vh;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    padding-top: 60px;
-  }
-
-  .menu-panel.active {
-    display: block;
-  }
-
-  .menu-panel ul {
-    list-style-type: none;
-    padding: 20px;
-  }
-
-  .menu-panel ul li {
-    display: block;
-    margin: 20px 0;
-    font-size: 1.5rem;
-  }
-
-  .close-btn {
-    font-size: 3.125rem;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  #my-photo {
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    display: block;
-    margin: auto;
-    margin-top: 60px;
-    margin-left: 450px;
-  }
-
-  #hello-word {
-    font-size: 3.5rem;
-    color: #000;
-    margin-top: 370px;
-    left: 400px;
-  }
 }
