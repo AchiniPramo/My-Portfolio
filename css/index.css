@@ -58,10 +58,6 @@ nav > ul > li > a {
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
 .hero-container {
   flex: 2.175;
   padding-left: 40px;
@@ -459,9 +455,6 @@ h2 {
 
 #burger {
   display: none;
-  color: white;
-  font-size: 1.875rem;
-  cursor: pointer;
 }
 
 .menu-panel {
@@ -472,12 +465,12 @@ h2 {
   position: fixed;
   top: 0;
   right: -100%;
-  transition: right 0.4s ease;
+  transition: right 0.5s ease;
 }
 
 .menu-panel ul {
   list-style: none;
-  padding: 50px 20px;
+  padding: 0px 20px;
 }
 
 .menu-panel ul li {
@@ -488,15 +481,4 @@ h2 {
   color: #fff;
   text-decoration: none;
   font-size: 1.2rem;
-}
-
-.close-btn {
-  background-color: transparent;
-  color: #fff;
-  border: none;
-  font-size: 3.125rem;
-  cursor: pointer;
-  position: absolute;
-  top: 10px;
-  right: 20px;
 }

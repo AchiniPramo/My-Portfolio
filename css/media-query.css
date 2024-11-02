@@ -195,7 +195,7 @@
     width: 150px;
     height: 35px;
     margin-right: 10px;
-    margin-top: 330px;
+    margin-top: 340px;
   }
 
   .download-text {
@@ -295,33 +295,41 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 425px) {
-  .hero-section {
+  #hero_section {
+    display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  header {
+    height: 50px;
+  }
+
+  .hero-container {
+    margin-left: -100px;
   }
 
   #burger {
     display: block;
     cursor: pointer;
-    font-size: 1.875rem;
-    color: black;
+    font-size: 1.5rem;
     position: absolute;
-    top: 20px;
-    right: 20px;
   }
-
+  .navigation-bar {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 8px;
+  }
   nav ul {
     display: none;
   }
 
   .menu-panel {
     display: none;
-    background-color: #b9b9b9;
-    height: 75vh;
-    width: 100%;
+    height: 60vh;
+    width: 50%;
     position: fixed;
-    top: 0;
-    left: 0;
+    right: 0;
     z-index: 1000;
     padding-top: 60px;
   }
@@ -349,73 +357,67 @@
     background: none;
     border: none;
     cursor: pointer;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
   }
 
   #my-photo {
     width: 200px;
     height: 200px;
-    margin-top: 60px;
-    margin-right: 50px;
+    margin: auto;
+    margin-top: 20px;
   }
 
   #hello-word {
     font-size: 2rem;
-    margin-bottom: 420px;
-    margin-right: 220px;
+    margin-right: -500px;
+    margin-left: -400px;
+    margin-top: 230px;
   }
 
   #my-name {
     font-size: 2rem;
-    margin-top: -400px;
-    margin-right: 220px;
+    text-align: center;
+    margin-right: -500px;
+    margin-left: -410px;
+    margin-top: 140px;
   }
 
   .about-myself {
-    margin-top: 0;
-    margin-right: 200px;
+    padding-right: 150px;
     display: block;
     font-size: 1rem;
     text-align: center;
+    padding-top: 80px;
     row-gap: 20px;
   }
 
   #summery {
-    margin-top: 30px;
+    margin-top: 230px;
     text-align: center;
-    margin-bottom: 10px;
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     line-height: 2;
-    padding-left: 100px;
-    max-width: 420px;
-    margin-right: 160px;
+    max-width: 500px;
+    margin-left: -450px;
   }
   .download {
     width: 90px;
-    margin-left: 120px;
     height: 30px;
   }
 
   .download-text {
     font-size: 0.5rem;
-    padding-right: -20px;
   }
 
   .social-icons {
     gap: 5px;
-    margin-right: 170px;
   }
 
   .social-icons img {
-    font-size: 40px;
     width: 40px;
     height: 40px;
-
-    margin-right: 0px;
-  }
-
-  .container {
-    display: flex;
-    justify-content: space-between;
   }
 
   .container {
@@ -459,13 +461,11 @@
     margin: 0;
     width: 40%;
     max-width: 400px;
-    margin-right: 400px;
   }
 
   .project-description {
     margin-top: 20px;
     text-align: center;
-    margin-right: 500px;
   }
 
   .contact-section {
