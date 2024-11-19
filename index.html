@@ -18,6 +18,8 @@
       href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 
     <link
       rel="stylesheet"
@@ -37,14 +39,20 @@
             <li><a href="#qualification">QUALIFICATIONS</a></li>
             <li><a href="#skills">SKILLS</a></li>
             <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#services">SERVICES</a></li>
+            <li><a href="#gallery">GALLERY</a></li>
             <li><a href="#contact">CONTACT ME</a></li>
           </ul>
-          <i class="fa fa-bars burger" id="burger" aria-hidden="true"></i>
         </nav>
+        <div class="menu-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
       </div>
     </header>
 
-    <div class="menu-panel" id="menu-panel-id">
+    <!-- <div class="menu-panel" id="menu-panel-id">
       <button class="close-btn" id="btn-close">&times;</button>
       <ul>
         <li><a href="#hero">HOME</a></li>
@@ -53,14 +61,14 @@
         <li><a href="#projects">PROJECTS</a></li>
         <li><a href="#contact">CONTACT ME</a></li>
       </ul>
-    </div>
+    </div> -->
 
-    <script>
+    <!-- <script>
       const burger = document.getElementById("burger");
       const menuPanel = document.getElementById("menu-panel-id");
-      const closeBtn = document.getElementById("btn-close");
+      const closeBtn = document.getElementById("btn-close"); -->
 
-      // Open the menu when the burger icon is clicked
+      <!-- // Open the menu when the burger icon is clicked
       burger.addEventListener("click", () => {
         menuPanel.classList.add("active");
       });
@@ -68,8 +76,8 @@
       // Close the menu when the close button is clicked
       closeBtn.addEventListener("click", () => {
         menuPanel.classList.remove("active");
-      });
-    </script>
+      }); -->
+    <!-- </script> -->
 
     <main>
       <!-- Hero Section -->
@@ -78,8 +86,8 @@
           <img
             id="my-photo"
             src="/assets/image/Achini.jpeg"
-            width="250px"
-            height="200px"
+            width="1280"
+            height="962"
             alt="Achini's profile photo"
           />
         </div>
@@ -284,39 +292,124 @@
 
       <!-- --------------------------------Project---------------------------- -->
       <section class="project" id="projects">
-        <div class="container">
-          <h2>PROJECTS_</h2>
-          <div class="project-content">
-            <div class="project-image">
-              <img
-                src="/assets/image/micro_finance_login_page.PNG"
-                alt="Project Image"
-              />
+        <h2 class="section-word">PROJECTS</h2>
+        <div class="container"></div>
+        <div class="assignment-slider">
+          <div class="slider-container">
+            <div class="assignment-card" data-index="1" style="background-image: url('assets/image/education tools for assignment.png');">
+              <p class="project-txt">Project 01</p>
+              <p class="topic">Recipe Hub</p>
+              <p class="description">A beautifully designed recipe website that brings a world of flavors to your fingertips! This site offers an easy-to-navigate collection of recipes, complete with ingredients, step-by-step instructions, and vibrant visuals. Whether you're a food enthusiast or a home chef, Recipe Hub is your go-to guide for culinary inspiration.</p>
+              <div class="card-buttons">
+                <a href="https://recipe-site-jet.vercel.app/" class="card-button">View Project 1</a>
+                <a href="https://github.com/AchiniPramo/Recipe-Site.git" class="card-button">View Assignment 1</a>
+              </div>
             </div>
 
-            <div class="project-description">
-              <h3>LOGIN PAGE</h3>
-              <p class="description">
-                A visually appealing log-in page inspired from the most famous
-                social media platform. I tried to enhance the look of the
-                originally simple and minimalist web page.
+            <div class="assignment-card" data-index="2" style="background-image: url('assets/image/education tools for assignment (1).png');">
+              <p class="project-txt">Project 02</p>
+              <p class="topic">Elysian-Haven-Hotel-Site
               </p>
-              <h4>USED STACKS</h4>
-              <p class="stacks">HTML and CSS</p>
-              <h4>VIEW IN GITHUB</h4>
-              <a href="https://github.com/AchiniPramo" target="_blank"
-                >https://github.com/AchiniPramo</a
-              >
+              <p class="description">A sleek and responsive hotel website for Elysian Haven Hotel, built using Bootstrap. This site offers a smooth user experience across devices, showcasing hotel features, amenities, and booking options through a modern, professional layout.</p>
+              <div class="card-buttons">
+                <a href="https://elysian-haven-hotel-site.vercel.app/" class="card-button">View Project 2</a>
+                <a href="https://github.com/AchiniPramo/Elysian-Haven-Hotel-Site.git" class="card-button">View Assignment 2</a>
+              </div>
+            </div>
+
+            <div class="assignment-card" data-index="3" style="background-image: url('assets/image/education tools for assignment.png');">
+              <p class="project-txt">Project 03</p>
+              <p class="topic">Calculator</p>
+              <p class="description">The Modern Gradient Calculator merges elegant design with essential functions. Its glass-morphic interface features smooth animations and supports both mouse and keyboard inputs, making calculations both visually pleasing and effortlessly practical.</p>
+              <div class="card-buttons">
+                <a href="https://calculator-assignment-7.vercel.app/" class="card-button">View Project 3</a>
+                <a href="https://github.com/AchiniPramo/Calculator-Assignment-7.git" class="card-button">View Assignment 3</a>
+              </div>
+            </div>
+
+            
+            <div class="assignment-card" data-index="4" style="background-image: url('assets/image/education tools for assignment (1).png');">
+              <p class="project-txt">Project 04</p>
+              <p class="topic">Finance-Project-MVC</p>
+              <p class="description">"Finance-Project-MVC" is a financial application using the Model-View-Controller (MVC) pattern. It separates data (Model), user interface (View), and input handling (Controller), improving maintainability, scalability, and testing for complex financial systems.</p>
+              <div class="card-buttons">
+                <a href="https://github.com/AchiniPramo/Finance-Project-MVC.git" class="card-button">View Assignment 4</a>
+              </div>
+            </div>
+
+            <div class="assignment-card" data-index="5" style="background-image: url('assets/image/education tools for assignment.png');">
+              <p class="project-txt">Project 05</p>
+              <p class="topic">POS-System</p>
+              <p class="description">A streamlined Point of Sale (POS) system designed to simplify retail and customer management operations. This system provides a user-friendly interface and essential tools for handling customer data, order processing, and store management tasks efficiently.</p>
+              <div class="card-buttons">
+                <a href="https://pos-system-opal.vercel.app/" class="card-button">View Project 5</a>
+                <a href="https://github.com/AchiniPramo/POS-System.git" class="card-button">View Assignment 5</a>
+              </div>
+            </div>
+
+            <div class="assignment-card" data-index="6" style="background-image: url('assets/image/education tools for assignment (1).png');">
+              <p class="project-txt">Project 06</p>
+              <p class="topic">Project 06</p>
+              <p class="description">This is a description for Project 01.</p>
+              <div class="card-buttons">
+                <a href="https://example.com/assignment7" class="card-button">View Project 6</a>
+                <a href="https://example.com/assignment8" class="card-button">View Assignment 6</a>
+              </div>
+            </div>
+
+            <div class="assignment-card" data-index="7" style="background-image: url('assets/image/education tools for assignment.png');">
+              <p class="project-txt">Project 07</p>
+              <p class="topic">Project 07</p>
+              <p class="description">This is a description for Project 01.</p>
+              <div class="card-buttons">
+                <a href="https://example.com/assignment7" class="card-button">View Project 7</a>
+                <a href="https://example.com/assignment8" class="card-button">View Assignment 7</a>
+              </div>
+            </div>
+
+            <div class="assignment-card" data-index="8" style="background-image: url('assets/image/education tools for assignment (1).png');">
+              <p class="project-txt">Project 08</p>
+              <p class="topic">Project 08</p>
+              <p class="description">This is a description for Project 01.</p>
+              <div class="card-buttons">
+                <a href="https://example.com/assignment7" class="card-button">View Project 8</a>
+                <a href="https://example.com/assignment8" class="card-button">View Assignment 8</a>
+              </div>
             </div>
           </div>
+          <div class="arrow left-arrow">←</div>
+          <div class="arrow right-arrow">→</div>
         </div>
       </section>
+
+      <!-- --------------------------------services---------------------------- -->
+      <section id="services" class="section services-section">
+        <h2 class="section-word">Services</h2><br>
+        <p class="service-description-p">
+          I offer a range of services to help you bring your digital projects to life. From UI/UX design to full-stack development, I have the skills and experience to deliver high-quality results that exceed your expectations.
+        </p><br><br>
+        <div class="container">
+          <div class="services" id="serviceContainer"></div>
+        </div>
+      </section>
+
+      <!-- --------------------------------Gallery-------------------------------- -->
+      <section class="gallery-section" id="gallery" >
+        <h2 class="section-word">GALLERY</h2>
+        <div class="carousel-container">
+          <div class="carousel" id="carousel">
+          </div>
+          <button class="nav-button" id="prev-btn">←</button>
+          <button class="nav-button" id="next-btn">→</button>
+        </div>
+      </section>
+
 
       <!-- --------------------------------Contact---------------------------- -->
       <section class="contact-section" id="contact">
         <h2 class="get">GET IN TOUCH_</h2>
         <div class="contact-info">
-          <p><strong>PHONE:</strong> +9471 927 9321</p>
+          <p><strong>PHONE:</strong> +9471 640 9321</p>
           <p><strong>FACEBOOK:</strong> Achini Pramodhya</p>
           <p><strong>EMAIL:</strong> achinipramodhya4@gmail.com</p>
         </div>
@@ -324,39 +417,108 @@
         <div class="contact-form">
           <h2 class="sub-heading">OR JUST WRITE ME A MAIL HERE_</h2>
           <form action="#" method="post">
+           <label>
             <input type="text" name="name" placeholder="Your Name" required />
+           </label>
+           <label>
             <input
               type="email"
               name="email"
               placeholder="Your Email"
               required
             />
+          </label>
+          <label>
             <textarea
               name="message"
               placeholder="Type the message here"
               rows="4"
               required
             ></textarea>
+          </label>
             <button type="submit">Send</button>
           </form>
         </div>
       </section>
+    </main>
 
       <footer class="footer">
-        <p id="copyright">&copy; 2024 Achini Pramodhya. All rights reserved</p>
-        <p id="thanks">Thank you!</p>
+        <div class="footer-wave"></div>
+        <div class="footer-content">
+          <div class="footer-row">
+            <div class="footer-col fade-in">
+              <h3>About Me</h3>
+              <p style="color: #ccc; line-height: 1.6;">
+                I'm a passionate developer dedicated to creating beautiful and functional web experiences.
+                With expertise in modern technologies, I bring ideas to life through code.
+              </p>
+              <div class="social-links">
+                <a href="https://web.facebook.com/checkpoint/1501092823525282/?next=https%3A%2F%2Fweb.facebook.com%2F" target="_blank">
+                  <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://github.com/AchiniPramo" target="_blank">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://twitter.com/" target="_blank">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+    
+            <div class="footer-col fade-in">
+              <h3>Quick Links</h3>
+              <ul class="footer-links">
+                <li><a href="#hero">HOME</a></li>
+                <li><a href="#qualification">QUALIFICATIONS</a></li>
+                <li><a href="#skills">SKILLS</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#gallery">GALLERY</a></li>
+                <li><a href="#contact">CONTACT ME</a></li>
+              </ul>
+            </div>
+    
+            <div class="footer-col fade-in">
+              <h3>Services</h3>
+              <ul class="footer-links">
+                <li><a href="#web-dev">Web Development</a></li>
+                <li><a href="#ui-design">UI/UX Design</a></li>
+                <li><a href="#mobile-dev">Mobile Development</a></li>
+                <li><a href="#consulting">Consulting</a></li>
+              </ul>
+            </div>
+    
+            <div class="footer-col fade-in">
+              <h3>Contact Info</h3>
+              <div class="contact-info">
+                <p><i class="fas fa-phone"></i> +9471 927 9321</p>
+                <p><i class="fas fa-envelope"></i> achinipramodhya4@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Galle,Sri Lanka</p>
+              </div>
+              <div class="newsletter-form">
+                <label>
+                  <input type="email" placeholder="Subscribe to newsletter">
+                </label>
+                <button><i class="fas fa-paper-plane"></i></button>
+              </div>
+            </div>
+          </div>
+    
+          <div class="footer-bottom">
+            <p>Portfolio &copy; 2024 Designed & Devoloped By Achini Pramodya. All rights reserved.</p>
+          </div>
+        </div>
+    
+        <a href="#" class="scroll-to-top">
+          <i class="fas fa-arrow-up"></i>
+        </a>
       </footer>
-    </main>
+    <script src="script.js"></script>
   </body>
 </html>
-
-<!-- 
-<section id="services" class="section services-section">
-  <h2 class="section-title animate-on-scroll">Services</h2><br>
-  <p class="service-description-p animate-on-scroll"> I offer a range of services to help you bring your digital projects to life. From UI/UX design to full-stack development, I have the skills and experience to deliver high-quality results that exceed your expectations.</p><br><br>
-  <div class="container animate-on-scroll">
-      <div class="services floating" id="serviceContainer"></div>
-  </div>
-</section>
-  </div>
-</section> -->
