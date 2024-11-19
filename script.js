@@ -1,83 +1,336 @@
-const burger = document.getElementById("burger");
-const menuPanel = document.getElementById("menu-panel-id");
-const closeBtn = document.getElementById("btn-close");
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  const themeToggle = document.getElementById('theme-toggle-checkbox');
+  const body = document.body;
+  document.querySelector('.scroll-to-top');
 
-burger.addEventListener("click", () => {
-  menuPanel.classList.toggle("active");
+  // Mobile menu toggle
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // Theme toggle
+  themeToggle.addEventListener('change', () => {
+    if (themeToggle.checked) {
+      body.classList.add('dark-mode');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      body.classList.remove('dark-mode');
+      localStorage.setItem('theme', 'light');
+    }
+  });
+  // Check for saved theme preference or system preference
+  const savedTheme = localStorage.getItem('theme');
+  const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+    body.classList.add('dark-mode');
+    themeToggle.checked = true;
+  }
+
+  let lastScrollTop = 0; // Variable to keep track of last scroll position
+  const header = document.querySelector('.header');
+
+  window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop; // Current scroll position
+
+    if (scrollTop > lastScrollTop) {
+      // Scrolling down
+      header.classList.add('hidden'); // Add hidden class to header
+    } else {
+      // Scrolling up
+      header.classList.remove('hidden');
+    }
+    lastScrollTop = scrollTop;
+  });
+
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click',
+        function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+            smoothScroll(document.documentElement, targetPosition, 1000);
+          }
+          // Close mobile menu after clicking a link
+          if (window.innerWidth <= 768) {
+            navLinks.classList.remove('active');
+          }
+        });
+  });
+});
+let currentIndex = 0;
+const totalCards = document.querySelectorAll('.assignment-card').length;
+const cardsContainer = document.querySelector('.slider-container');
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+
+// assignment-card
+function updateSlider() {
+  const cardWidth = document.querySelector('.assignment-card').offsetWidth;
+  cardsContainer.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+}
+
+leftArrow.addEventListener('click', () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+  } else {
+    currentIndex = totalCards - 4; // Loop back to the end
+  }
+  updateSlider();
 });
 
-closeBtn.addEventListener("click", () => {
-  menuPanel.classList.remove("active");
+rightArrow.addEventListener('click', () => {
+  if (currentIndex < totalCards - 4) {
+    currentIndex++;
+  } else {
+    currentIndex = 0; // Loop back to the beginning
+  }
+  updateSlider();
 });
 
-// ------------------------------------Services--------------------------------------------
-const serviceContainer = document.getElementById("serviceContainer");
-if (serviceContainer) {
+// Initialize slider
+updateSlider();
+
+// Gallery #D curcle
+document.addEventListener("DOMContentLoaded", () => {
+  const serviceContainer = document.getElementById("serviceContainer");
+
   const services = [
     {
-      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>',
+      icon: '<i class="fas fa-code"></i>',
       title: "Web Development",
-      description:
-        "Creating responsive and scalable web applications using cutting-edge technologies and frameworks.",
+      description: "Creating responsive and scalable web applications using cutting-edge technologies and frameworks.",
     },
     {
-      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>',
+      icon: '<i class="fas fa-mobile-alt"></i>',
       title: "Mobile App Development",
-      description:
-        "Developing high-performance, cross-platform mobile applications for iOS and Android.",
+      description: "Developing high-performance, cross-platform mobile applications for iOS and Android.",
     },
     {
-      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>',
+      icon: '<i class="fas fa-shield-alt"></i>',
       title: "Cybersecurity",
-      description:
-        "Implementing advanced security measures to protect digital assets and ensure data integrity.",
+      description: "Implementing advanced security measures to protect digital assets and ensure data integrity.",
     },
     {
-      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>',
+      icon: '<i class="fas fa-brain"></i>',
       title: "AI & Machine Learning",
-      description:
-        "Leveraging artificial intelligence and machine learning algorithms to solve complex business problems.",
+      description: "Leveraging artificial intelligence and machine learning algorithms to solve complex business problems.",
     },
     {
-      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>',
+      icon: '<i class="fas fa-cloud"></i>',
       title: "Cloud Computing",
-      description:
-        "Designing and implementing scalable cloud solutions for improved performance and cost-efficiency.",
+      description: "Designing and implementing scalable cloud solutions for improved performance and cost-efficiency.",
     },
     {
-      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>',
-      title: "DevOps",
-      description:
-        "Streamlining development and operations processes for faster deployment and improved collaboration.",
-    },
-    {
-      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>',
+      icon: '<i class="fas fa-database"></i>',
       title: "Data Analytics",
-      description:
-        "Extracting valuable insights from large datasets to drive informed business decisions.",
+      description: "Extracting valuable insights from large datasets to drive informed business decisions.",
     },
+   
     {
-      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path></svg>',
+      icon: '<i class="fas fa-network-wired"></i>',
       title: "IoT Solutions",
-      description:
-        "Developing interconnected systems and devices for smart, data-driven environments.",
+      description: "Developing interconnected systems and devices for smart, data-driven environments.",
     },
     {
-      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16"></path><path d="M4 15h16"></path><rect width="20" height="12" x="2" y="6" rx="2"></rect><path d="M6 12v3"></path><path d="M10 12v3"></path><path d="M14 12v3"></path><path d="M18 12v3"></path><path d="M8 12v3"></path><path d="M12 12v3"></path><path d="M16 12v3"></path><path d="M2 16h20"></path></svg>',
+      icon: '<i class="fas fa-shopping-cart"></i>',
       title: "POS Development",
-      description:
-        "Developing advanced Point of Sale solutions for streamlined transactions and efficient business operations.",
+      description: "Developing advanced Point of Sale solutions for streamlined transactions and efficient business operations.",
     },
   ];
 
-  services.forEach((service, index) => {
+  services.forEach((service) => {
     const card = document.createElement("div");
     card.classList.add("service-card");
     card.innerHTML = `
-            <div class="service-icon">${service.icon}</div>
-            <h3 class="service-title">${service.title}</h3>
-            <p class="service-description">${service.description}</p>
-        `;
+                    <div class="service-icon">${service.icon}</div>
+                    <h3 class="service-title">${service.title}</h3>
+                    <p class="service-description">${service.description}</p>
+                `;
     serviceContainer.appendChild(card);
   });
+});
+class Carousel3D {
+  constructor() {
+    this.carousel = document.getElementById('carousel');
+    this.items = [];
+    this.currentAngle = 0;
+    this.isAutoRotating = true;
+    this.autoRotateSpeed = 0.2;
+    this.radius = window.innerWidth < 768 ? 250 : 400; // Adjust radius for mobile
+    this.isMobile = window.innerWidth < 768;
+
+
+    this.images = [
+      'assets/image/gallery/innovesta.jpeg',
+      'assets/image/gallery/innovesta group photo.jpeg',
+      'assets/image/gallery/scl photo.jpeg',
+      'assets/image/gallery/innovesta trofy.jpeg',
+      'assets/image/gallery/group innovesta.jpeg',
+      'assets/image/gallery/scl get together.jpeg',
+      'assets/image/gallery/innovesta 2.jpeg',
+      'assets/image/gallery/get together.jpeg',
+      'assets/image/gallery/trip photo.jpeg',
+      'assets/image/gallery/group.jpeg',
+      'assets/image/gallery/wedding photo.jpeg',
+      'assets/image/Achini.jpeg'
+    ];
+
+    this.init();
+    this.setupControls();
+    this.setupResizeHandler();
+    this.animate();
+  }
+
+  init() {
+    this.carousel.innerHTML = ''; // Clear existing items
+    this.items = [];
+
+    this.images.forEach((src, index) => {
+      const item = document.createElement('div');
+      item.className = 'carousel-item';
+
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = `Portfolio item ${index + 1}`;
+
+      item.appendChild(img);
+      this.carousel.appendChild(item);
+      this.items.push(item);
+    });
+
+    this.updateItemsPosition();
+  }
+  updateItemsPosition() {
+    const angleStep = 360 / this.items.length;
+
+    this.items.forEach((item, index) => {
+      const angle = ((index * angleStep) + this.currentAngle) * (Math.PI / 180);
+
+      if (this.isMobile) {
+        // X-axis rotation for mobile
+        const y = Math.sin(angle) * this.radius;
+        const z = Math.cos(angle) * this.radius;
+        const rotateX = index * angleStep + this.currentAngle;
+
+        item.style.transform = `
+                            translate3d(0, ${y}px, ${z}px)
+                            rotateX(${-rotateX}deg)
+                        `;
+      } else {
+        // Y-axis rotation for desktop
+        const x = Math.sin(angle) * this.radius;
+        const z = Math.cos(angle) * this.radius;
+        const rotateY = -index * angleStep - this.currentAngle;
+
+        item.style.transform = `
+                            translate3d(${x}px, 0, ${z}px)
+                            rotateY(${rotateY}deg)
+                        `;
+      }
+
+      item.style.opacity = Math.cos((this.currentAngle + index * angleStep) * (Math.PI / 180)) * 0.5 + 0.5;
+    });
+  }
+
+  setupControls() {
+    document.getElementById('prev-btn').addEventListener('click', () => {
+      this.isAutoRotating = false;
+      this.currentAngle -= 30;
+      this.updateItemsPosition();
+      setTimeout(() => this.isAutoRotating = true, 1000);
+    });
+
+    document.getElementById('next-btn').addEventListener('click', () => {
+      this.isAutoRotating = false;
+      this.currentAngle += 30;
+      this.updateItemsPosition();
+      setTimeout(() => this.isAutoRotating = true, 1000);
+    });
+  }
+
+  setupResizeHandler() {
+    window.addEventListener('resize', () => {
+      this.isMobile = window.innerWidth < 768;
+      this.radius = this.isMobile ? 250 : 400;
+      this.updateItemsPosition();
+    });
+  }
+
+  animate() {
+    if (this.isAutoRotating) {
+      this.currentAngle += this.autoRotateSpeed;
+      this.updateItemsPosition();
+    }
+    requestAnimationFrame(() => this.animate());
+  }
 }
+
+// Initialize the carousel when the page loads
+window.addEventListener('load', () => {
+  new Carousel3D();
+});
+
+// Intersection Observer for fade-in animation
+const observerOptions = {
+  threshold: 0.2,
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in').forEach(element => {
+  observer.observe(element);
+});
+
+// Scroll to top button
+const scrollToTop = document.querySelector('.scroll-to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 100) {
+    scrollToTop.classList.add('active');
+  } else {
+    scrollToTop.classList.remove('active');
+  }
+});
+
+scrollToTop.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+// Get the header element
+const header = document.querySelector('header');
+
+// Variable to track scroll position
+let lastScrollTop = 0;
+
+// Listen for scroll events
+window.addEventListener('scroll', function() {
+  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+  // Check if scrolling down
+  if (currentScroll > lastScrollTop) {
+    // Scrolling down, hide the header
+    header.style.transform = 'translateY(-100%)';
+  } else {
+    // Scrolling up, show the header
+    header.style.transform = 'translateY(0)';
+  }
+
+  // Update lastScrollTop with current scroll position
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});

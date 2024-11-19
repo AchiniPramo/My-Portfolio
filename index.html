@@ -30,11 +30,14 @@
     />
   </head>
   <body>
-    <header>
-      <div class="navigation-bar">
-        <span class="welcome"> WELCOME! </span>
+    <header class="header">
+      <div class="header-content">
+        <div class="logo-container">
+          <img src="assets/image/8a28dc7b-c87d-4adf-8c5d-f7e2c72a064a.jpg" alt="Logo" class="logo-image">
+            <a href="#" class="logo">WELCOME !</a>
+        </div>
         <nav>
-          <ul class="navigation-links">
+          <ul class="nav-links">
             <li><a href="#hero">HOME</a></li>
             <li><a href="#qualification">QUALIFICATIONS</a></li>
             <li><a href="#skills">SKILLS</a></li>
@@ -51,33 +54,6 @@
         </div>
       </div>
     </header>
-
-    <!-- <div class="menu-panel" id="menu-panel-id">
-      <button class="close-btn" id="btn-close">&times;</button>
-      <ul>
-        <li><a href="#hero">HOME</a></li>
-        <li><a href="#qualifications">QUALIFICATIONS</a></li>
-        <li><a href="#skills">SKILLS</a></li>
-        <li><a href="#projects">PROJECTS</a></li>
-        <li><a href="#contact">CONTACT ME</a></li>
-      </ul>
-    </div> -->
-
-    <!-- <script>
-      const burger = document.getElementById("burger");
-      const menuPanel = document.getElementById("menu-panel-id");
-      const closeBtn = document.getElementById("btn-close"); -->
-
-      <!-- // Open the menu when the burger icon is clicked
-      burger.addEventListener("click", () => {
-        menuPanel.classList.add("active");
-      });
-
-      // Close the menu when the close button is clicked
-      closeBtn.addEventListener("click", () => {
-        menuPanel.classList.remove("active");
-      }); -->
-    <!-- </script> -->
 
     <main>
       <!-- Hero Section -->
@@ -103,8 +79,8 @@
             <p>Address : Galle,Sri Lanka</p>
           </div>
 
-          <h1 class="about-me">ABOUT_</h1>
-          <div class="text-container">
+          <h2 class="section-word">ABOUT</h2>
+            <div class="text-container">
             <p class="my-text" id="summery">
               Hello! I'm Achini Pramodhya, a passionate and driven Full-Stack
               Developer Intern with a keen interest in creating dynamic and
@@ -171,7 +147,7 @@
 
       <!-- -- Qualification Section -- -->
       <section id="qualification">
-        <h2 class="headiing">QUALIFICATIONS_</h2>
+        <h2 class="section-word">QUALIFICATIONS</h2>
         <div class="container">
           <div class="education">
             <h2 class="sub-heading">EDUCATION</h2>
@@ -203,7 +179,7 @@
       <!-- ----------Skills------------- -->
       <section class="all-skills" id="skills">
         <div class="skill-container">
-          <h2 class="skill-word">SKILLS_</h2>
+          <h2 class="section-word">SKILLS</h2>
           <div class="skills-grid">
             <!-- Frontend Skills -->
             <div class="frontend">
@@ -407,7 +383,7 @@
 
       <!-- --------------------------------Contact---------------------------- -->
       <section class="contact-section" id="contact">
-        <h2 class="get">GET IN TOUCH_</h2>
+        <h2 class="section-word">GET IN TOUCH</h2>
         <div class="contact-info">
           <p><strong>PHONE:</strong> +9471 640 9321</p>
           <p><strong>FACEBOOK:</strong> Achini Pramodhya</p>
@@ -417,10 +393,10 @@
         <div class="contact-form">
           <h2 class="sub-heading">OR JUST WRITE ME A MAIL HERE_</h2>
           <form action="#" method="post">
-           <label>
+            <label>
             <input type="text" name="name" placeholder="Your Name" required />
-           </label>
-           <label>
+          </label>
+          <label>
             <input
               type="email"
               name="email"
@@ -519,6 +495,6 @@
           <i class="fas fa-arrow-up"></i>
         </a>
       </footer>
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
   </body>
 </html>
