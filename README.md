@@ -18,6 +18,16 @@ Welcome to my personal portfolio website! This project is a showcase of my skill
 ### 🛠 **Skills**  
 - A detailed view of my technical expertise, including programming languages, frameworks, and tools I excel in.  
 
+### 💼 **Services**  
+- Highlights of the services I offer, such as:  
+  - Web Development  
+  - UI/UX Design  
+  - Full-Stack Development  
+  - Custom Solutions  
+
+### 📂 **Projects**  
+- A portfolio of my past projects, showcasing my technical skills and creativity in real-world applications.  
+
 ### 📸 **Gallery**  
 - A curated collection of screenshots and media highlighting my previous projects and creative endeavors.  
 
@@ -42,6 +52,8 @@ Welcome to my personal portfolio website! This project is a showcase of my skill
 ├── about.html        # About page  
 ├── qualification.html # Qualification page  
 ├── skills.html       # Skills page  
+├── services.html     # Services page  
+├── projects.html     # Projects page  
 ├── gallery.html      # Gallery page  
 ├── contact.html      # Contact page  
 ├── /css              # CSS files for styling  
@@ -58,7 +70,7 @@ Welcome to my personal portfolio website! This project is a showcase of my skill
 
 1. Clone the repository:  
    ```bash  
-   git clone https://github.com/AchiniPramo/My-Portfolio.git 
+   git clone https://github.com/AchiniPramo/My-Portfolio.git  
    ```  
 
 2. Open the project folder:  
@@ -88,7 +100,7 @@ Contributions are welcome! Feel free to submit issues or pull requests to improv
 
 If you have any questions or want to collaborate, feel free to reach out:  
 📩 **Email**: achinipramodhya4@gmail.com  
-🌐 **Portfolio**:(https://my-portfolio-iota-pied-66.vercel.app/) 
+🌐 **Portfolio**: [My Portfolio](https://my-portfolio-iota-pied-66.vercel.app/)  
 
 ---
 
