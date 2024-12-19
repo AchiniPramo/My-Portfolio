@@ -10,16 +10,25 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinks.classList.toggle("active");
   });
 
-  // Theme toggle
-  themeToggle.addEventListener("change", () => {
-    if (themeToggle.checked) {
-      body.classList.add("dark-mode");
-      localStorage.setItem("theme", "dark");
-    } else {
-      body.classList.remove("dark-mode");
-      localStorage.setItem("theme", "light");
-    }
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        const targetPosition =
+          targetElement.getBoundingClientRect().top + window.pageYOffset;
+        smoothScroll(document.documentElement, targetPosition, 1000);
+      }
+
+      // Close mobile menu after clicking a link
+      if (window.innerWidth <= 1023) {
+        navLinks.classList.remove("active");
+      }
+    });
   });
+
   // Check for saved theme preference or system preference
   const savedTheme = localStorage.getItem("theme");
   const systemPrefersDark =
@@ -42,30 +51,38 @@ document.addEventListener("DOMContentLoaded", () => {
       header.classList.add("hidden"); // Add hidden class to header
     } else {
       // Scrolling up
-      header.classList.remove("hidden");
+      header.classList.remove("hidden"); // Remove hidden class from header
     }
-    lastScrollTop = scrollTop;
+
+    lastScrollTop = scrollTop; // Update last scroll position
   });
 
-  // Smooth scrolling for navigation links
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute("href");
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        const targetPosition =
-          targetElement.getBoundingClientRect().top + window.pageYOffset;
-        smoothScroll(document.documentElement, targetPosition, 1000);
-      }
-      // Close mobile menu after clicking a link
-      if (window.innerWidth <= 768) {
-        navLinks.classList.remove("active");
-      }
-    });
-  });
+  function smoothScroll(element, targetPosition, duration) {
+    const startPosition = element.scrollTop;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
+
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      element.scrollTop = ease(timeElapsed, startPosition, distance, duration);
+      if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    function ease(t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return (c / 2) * t * t + b;
+      t--;
+      return (-c / 2) * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
+  }
+  // Close mobile menu after clicking a link
+  if (window.innerWidth <= 768) {
+    navLinks.classList.remove("active");
+  }
 });
-
 let currentIndex = 0;
 const totalCards = document.querySelectorAll(".assignment-card").length;
 const cardsContainer = document.querySelector(".slider-container");
@@ -140,7 +157,12 @@ document.addEventListener("DOMContentLoaded", () => {
       description:
         "Extracting valuable insights from large datasets to drive informed business decisions."
     },
-
+    {
+      icon: '<i class="fas fa-cogs"></i>',
+      title: "DevOps",
+      description:
+        "Streamlining development and operations processes for faster deployment and improved collaboration."
+    },
     {
       icon: '<i class="fas fa-network-wired"></i>',
       title: "IoT Solutions",
@@ -166,6 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
     serviceContainer.appendChild(card);
   });
 });
+
 class Carousel3D {
   constructor() {
     this.carousel = document.getElementById("carousel");
@@ -173,7 +196,7 @@ class Carousel3D {
     this.currentAngle = 0;
     this.isAutoRotating = true;
     this.autoRotateSpeed = 0.2;
-    this.radius = window.innerWidth < 768 ? 200 : 400;
+    this.radius = window.innerWidth < 768 ? 250 : 400; // Adjust radius for mobile
     this.isMobile = window.innerWidth < 768;
 
     this.images = [
@@ -182,15 +205,13 @@ class Carousel3D {
       "assets/image/gallery/scl photo.jpeg",
       "assets/image/gallery/innovesta trofy.jpeg",
       "assets/image/gallery/group innovesta.jpeg",
-      "assets/image/gallery/scl get together.jpeg",
+      "assets/image/gallery/Scl get together.jpeg",
       "assets/image/gallery/innovesta 2.jpeg",
       "assets/image/gallery/get together.jpeg",
       "assets/image/gallery/trip photo.jpeg",
       "assets/image/gallery/group.jpeg",
       "assets/image/gallery/wedding photo.jpeg",
-      "assets/image/Achini.jpeg",
-      "assets/image/gallery/New year festival.jpeg",
-      "assets/image/gallery/Field visit.jpeg"
+      "assets/image/Achini.jpeg"
     ];
 
     this.init();
@@ -332,14 +353,20 @@ const header = document.querySelector("header");
 
 // Variable to track scroll position
 let lastScrollTop = 0;
+
+// Listen for scroll events
 window.addEventListener("scroll", function () {
   let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
+  // Check if scrolling down
   if (currentScroll > lastScrollTop) {
+    // Scrolling down, hide the header
     header.style.transform = "translateY(-100%)";
   } else {
+    // Scrolling up, show the header
     header.style.transform = "translateY(0)";
   }
 
+  // Update lastScrollTop with current scroll position
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });

@@ -97,22 +97,22 @@
     height: 200px;
   }
 
-  .coverflow {
-    height: 600px;
-    padding: 40px;
+  .carousel-container {
+    max-width: 1400px;
+    height: 85vh;
   }
 
-  .coverflow__image {
-    width: 600px;
-    height: 600px;
-    margin-left: -300px;
+  .carousel-item {
+    width: 350px;
+    height: 250px;
+    margin-left: -175px;
+    margin-top: -125px;
   }
 
-  .prev-arrow,
-  .next-arrow {
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
+  .nav-button {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
   }
 }
 
@@ -196,15 +196,22 @@
     height: 200px;
   }
 
-  .coverflow {
-    height: 500px;
-    padding: 35px;
+  .carousel-container {
+    max-width: 1200px;
+    height: 80vh;
   }
 
-  .coverflow__image {
-    width: 500px;
-    height: 500px;
-    margin-left: -250px;
+  .carousel-item {
+    width: 300px;
+    height: 200px;
+    margin-left: -150px;
+    margin-top: -100px;
+  }
+
+  .nav-button {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
   }
 
   .prev-arrow,
@@ -219,7 +226,6 @@
   .hero-section {
     flex-direction: column;
     align-items: center;
-    padding: 0 20px;
   }
 
   header {
@@ -229,7 +235,7 @@
 
   nav > ul > li {
     margin: 0 20px;
-    font-size: 1.8rem;
+    font-size: 2rem;
     animation: fadeIn 0.5s ease;
   }
   .nav-links a {
@@ -331,7 +337,9 @@
     width: 36px;
     height: 36px;
   }
-
+  .services-section {
+    margin-left: 10px;
+  }
   .services-grid {
     grid-template-columns: 1fr;
   }
@@ -357,6 +365,41 @@
     margin-left: 100px;
   }
 
+  .carousel-container {
+    width: 70%;
+    height: 56vh;
+  }
+
+  .carousel {
+    width: 95%;
+    height: 100%;
+  }
+
+  .carousel-item {
+    width: 210px;
+    height: 140px;
+    margin-left: -105px;
+    margin-top: -70px;
+  }
+
+  .carousel-item img {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-button {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+
+  #prev-btn {
+    left: 14px;
+  }
+
+  #next-btn {
+    right: 14px;
+  }
+
   /* contact */
   .contact-section {
     flex-direction: column;
@@ -371,12 +414,11 @@
 
   .contact-info {
     margin-top: 120px;
-    max-width: 500px;
   }
 
   .contact-form input,
   .contact-form textarea {
-    width: 500px;
+    width: 75%;
   }
 
   .contact-form button {
@@ -398,9 +440,9 @@
     text-align: center;
     padding: 17px 0;
     background-color: #333333;
+    border-bottom-left-radius: 17px;
+    border-bottom-right-radius: 17px;
     position: absolute;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
     top: 100%;
     left: 0;
   }
@@ -410,7 +452,8 @@
   }
 
   .nav-links li {
-    margin: 10px 0;
+    font-size: 12px;
+    margin: 8px 0;
   }
 
   .menu-toggle {
@@ -437,20 +480,9 @@
     width: calc(33.33% - 20px);
     height: 240px;
   }
-
-  .coverflow {
-    height: 400px;
-    padding: 30px;
-  }
-
-  .coverflow__image {
-    width: 400px;
-    height: 400px;
-    margin-left: -200px;
-  }
 }
 
-@media screen and (min-width: 425px) and (max-width: 767px) {
+@media screen and (min-width: 480px) and (max-width: 768px) {
   h1 {
     font-size: 29px;
   }
@@ -655,10 +687,6 @@
   .contact-form {
     margin-top: 20px;
   }
-  .contact-form input,
-  .contact-form textarea {
-    width: 325px;
-  }
 
   .nav-links {
     display: none;
@@ -725,7 +753,7 @@
   }
 
   .carousel-container {
-    height: 60vh;
+    height: 100vh;
   }
 
   .carousel-item {
@@ -796,7 +824,8 @@
     gap: 20px;
   }
 }
-@media screen and (min-width: 320px) and (max-width: 424px) {
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
   h1 {
     font-size: 25px;
   }
@@ -814,7 +843,7 @@
   }
 
   p {
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .section-word {
@@ -831,12 +860,7 @@
   }
 
   .hero-container {
-    margin-left: 10px;
-  }
-
-  .logo {
-    margin-bottom: 14px;
-    font-size: 18px;
+    margin-left: -100px;
   }
 
   .nav-links {
@@ -844,10 +868,10 @@
     flex-direction: column;
     width: 100%;
     text-align: center;
-    padding: 16px 0;
+    padding: 13px 0;
     background-color: #333333;
-    border-bottom-left-radius: 17px;
-    border-bottom-right-radius: 17px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
     position: absolute;
     top: 100%;
     left: 0;
@@ -858,13 +882,37 @@
   }
 
   .nav-links li {
-    font-size: 12px;
-    margin: 8px 0;
+    font-size: 10px;
+    margin: 7px 0;
   }
 
   .menu-toggle {
     display: flex;
-    margin-bottom: 14px;
+  }
+
+  .menu-panel {
+    display: none;
+    height: 60vh;
+    width: 50%;
+    position: fixed;
+    right: 0;
+    z-index: 1000;
+    padding-top: 50px;
+  }
+
+  .menu-panel.active {
+    display: block;
+  }
+
+  .menu-panel ul {
+    list-style-type: none;
+    padding: 20px;
+  }
+
+  .menu-panel ul li {
+    display: block;
+    margin: 20px 0;
+    font-size: 1.5rem;
   }
 
   .hero-section {
@@ -887,31 +935,29 @@
   }
 
   #hello-word {
-    font-size: 2rem;
+    font-size: 2.8rem;
     font-weight: 300;
     white-space: nowrap;
     margin-top: 15px;
-    text-align: center;
-    margin: 0;
   }
 
   #my-name {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 300;
     white-space: nowrap;
     letter-spacing: 0.15rem;
     margin-top: 10px;
-    text-align: center;
   }
 
   .about-myself {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     text-align: center;
     row-gap: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 15px;
+    margin-left: 80px;
   }
 
   .about-myself p {
@@ -927,17 +973,19 @@
   }
 
   #summery {
-    font-size: 0.8rem;
-    max-width: 75%;
+    font-size: 1rem;
+    max-width: 70%;
     line-height: 1.6;
     margin-top: 15px;
     text-align: center;
+    margin-left: 110px;
   }
 
   .download {
-    width: 100px;
+    width: 130px;
     height: 30px;
-    margin-top: -100px;
+    margin-left: 75px;
+    margin-top: 15px;
     display: flex;
     justify-content: center;
   }
@@ -947,23 +995,25 @@
   }
 
   .social-icons {
-    gap: 10px;
-    margin-top: 20px;
-    width: 180px;
-    height: 28px;
+    gap: 15px;
+    margin-top: 15px;
     display: flex;
     justify-content: center;
-    margin-right: 20px;
   }
 
   .social-icons img {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
   }
 
   .social-icons {
     gap: 5px;
     margin-top: 100px;
+  }
+
+  .social-icons img {
+    width: 40px;
+    height: 40px;
   }
 
   .container {
@@ -1030,14 +1080,10 @@
     margin-top: 0;
   }
 
-  .contact-info p {
-    font-size: 0.8rem;
-  }
-
   .contact-form input,
   .contact-form textarea {
     margin: 10px;
-    width: 225px;
+    width: 300px;
   }
 
   .contact-form {
@@ -1057,19 +1103,52 @@
     font-size: 0.5rem;
     border-radius: 20px;
   }
+  .carousel-container {
+    height: 100vh;
+  }
+
+  .carousel-item {
+    width: 180px;
+    height: 125px;
+    margin-left: -95px;
+    margin-top: -60.5px;
+  }
+
+  .nav-button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  #prev-btn {
+    left: 30px;
+  }
+
+  #next-btn {
+    right: 30px;
+  }
+
+  .prev-arrow,
+  .next-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+
   .coverflow {
     height: 250px;
-    padding: 20px;
+    padding: 22px;
   }
 
   .coverflow__image {
     width: 250px;
     height: 250px;
-    margin-left: -125px;
+    margin-left: -130px;
   }
 }
+
 /* Small Mobile (320px and below) */
-@media (max-width: 319px) {
+@media (max-width: 320px) {
   h1 {
     font-size: 21px;
   }
@@ -1233,14 +1312,46 @@
     border-radius: 15px;
   }
 
+  .carousel-container {
+    height: 60vh;
+  }
+
+  .carousel-item {
+    width: 165px;
+    height: 115px;
+    margin-left: -80px;
+    margin-top: -55.5px;
+  }
+
+  .nav-button {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  #prev-btn {
+    left: 20px;
+  }
+
+  #next-btn {
+    right: 20px;
+  }
+
+  .prev-arrow,
+  .next-arrow {
+    width: 25px;
+    height: 25px;
+    font-size: 15px;
+  }
+
   .coverflow {
     height: 200px;
-    padding: 15px;
+    padding: 18px;
   }
 
   .coverflow__image {
     width: 200px;
     height: 200px;
-    margin-left: -100px;
+    margin-left: -115px;
   }
 }
