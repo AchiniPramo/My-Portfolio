@@ -205,7 +205,7 @@ class Carousel3D {
       "assets/image/gallery/scl photo.jpeg",
       "assets/image/gallery/innovesta trofy.jpeg",
       "assets/image/gallery/group innovesta.jpeg",
-      "assets/image/gallery/Scl get together.jpeg",
+      "assets/image/gallery/scl get together.jpeg",
       "assets/image/gallery/innovesta 2.jpeg",
       "assets/image/gallery/get together.jpeg",
       "assets/image/gallery/trip photo.jpeg",
